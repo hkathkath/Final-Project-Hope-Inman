@@ -1,0 +1,6 @@
+@Final_Project___Hope_Inman_HostAddress = http://localhost:5294
+
+GET {{Final_Project___Hope_Inman_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
