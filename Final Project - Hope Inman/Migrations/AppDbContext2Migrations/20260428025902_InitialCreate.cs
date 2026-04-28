@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Final_Project___Hope_Inman.Migrations
+namespace Final_Project___Hope_Inman.Migrations.AppDbContext2Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -11,34 +11,28 @@ namespace Final_Project___Hope_Inman.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Teams",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    college = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    year = table.Column<int>(type: "int", nullable: false),
-                    major = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    elective = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    football = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    baseball = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    basketball = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    soccer = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    hockey = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.id);
+                    table.PrimaryKey("PK_Teams", x => x.id);
                 });
-
-        
-
         }
-
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Students");
-           
+                name: "Teams");
         }
     }
-    }
-
+}

@@ -2,11 +2,12 @@
 {
     public class Student
     {
-        public int id { get; set;}
+       public int id { get; set; }
         public string? name{ get; set; }
-        public int age{ get; set;}
-        public string? address { get; set; }
-        public string? gender { get; set; }
-        public string? phoneNum { get; set; }
+        public string? college { get; set; }
+        public int year{ get; set;}
+        public string? major { get; set; }
+        public string? elective { get; set; }
+       
     }
 }

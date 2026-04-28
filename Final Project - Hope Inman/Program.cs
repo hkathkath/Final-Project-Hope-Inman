@@ -7,9 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 #region Database Configure
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString2 = builder.Configuration.GetConnectionString("SecondConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
-
+builder.Services.AddDbContext<AppDbContext2>(options => options.UseSqlServer(connectionString2));
 #endregion
 
 

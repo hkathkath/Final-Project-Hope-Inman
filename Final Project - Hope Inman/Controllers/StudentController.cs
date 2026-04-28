@@ -52,7 +52,7 @@ namespace Final_Project___Hope_Inman.Controllers
 
             if (student == null)
             {
-                return NotFound(new { Message = $"Student with ID {id} not found." });
+                return NotFound(new { Message = $"Student with id {id} not found." });
             }
 
             _appDbContext.Students.Remove(student);

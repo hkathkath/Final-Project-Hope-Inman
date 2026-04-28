@@ -3,16 +3,19 @@ using Final_Project___Hope_Inman.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Final_Project___Hope_Inman.Migrations
+namespace Final_Project___Hope_Inman.Migrations.AppDbContext2Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AppDbContext2))]
+    [Migration("20260428025902_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +24,7 @@ namespace Final_Project___Hope_Inman.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Final_Project___Hope_Inman.Module.Student", b =>
+            modelBuilder.Entity("Final_Project___Hope_Inman.Module.Teams", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -29,32 +32,25 @@ namespace Final_Project___Hope_Inman.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<string>("college")
+                    b.Property<string>("baseball")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("year")
-                        .HasColumnType("int");
-
-                    b.Property<string>("major")
+                    b.Property<string>("basketball")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("name")
+                    b.Property<string>("football")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("elective")
+                    b.Property<string>("hockey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("soccer")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
-                    b.ToTable("Students");
-
-
-
-
+                    b.ToTable("Teams");
                 });
-
-
-
 #pragma warning restore 612, 618
         }
     }
